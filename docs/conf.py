@@ -27,7 +27,7 @@ copyright = '2021, Salim Kanoun, Wendy Revailler'
 author = 'Salim Kanoun, Wendy Revailler'
 
 # The full version, including alpha/beta/rc tags
-release = '0.72'
+release = '0.75'
 
 
 # -- General configuration ---------------------------------------------------

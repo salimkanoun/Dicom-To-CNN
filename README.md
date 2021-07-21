@@ -10,11 +10,11 @@ Features :
   - Dicom to Nifti
   - Mask to RTSS and DICOMSeg
   - RTSS to mask
+  - DicomSeg to mask 
 - PET/CT
   - Conversion Bqml/Counts to SUV and SUL
   - Fusion
 
-TODO : DicomSeg To mask
 
 #Maintainer  : Salim Kanoun
 #Contributors : Thomas Trouillard, Wendy Revailler
