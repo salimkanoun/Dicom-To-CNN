@@ -20,13 +20,21 @@ def convert_array_to_img(numpy_array:np.ndarray, serie_object:Series) -> sitk.Im
         sitk_img.SetSpacing( (original_pixel_spacing[0], original_pixel_spacing[1], serie_object.get_z_spacing()) )
         return sitk_img
 
-def sitk2numpy(sitk_image:sitk.Image) -> np.ndarray:
-    """method to convert a sitk.Image to a np.ndarray
-
-    Args:
-        sitk_image (sitk.Image): [a sitk Image]
-
-    Returns:
-        np.ndarray: [return the corresponding np.ndarray]
+class DictSitk2Numpy(object):
     """
-    return sitk.GetArrayFromImage(sitk_image)
+    Convert a dictionnary of SimpleITK image into Numpy ndarray
+    """
+    def __init__(self, keys:tuple):
+        """constructor
+
+        Args:
+            keys (tuple): [tuple with key of sitk Image]
+        """
+        self.keys = keys
+
+    def __call__(self, img_dict):
+        
+        for key in self.keys:
+            img_dict[key] = sitk.GetArrayFromImage(img_dict.pop(key))
+        
+        return img_dict
